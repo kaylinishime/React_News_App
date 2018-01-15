@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class ArticleList extends Component {
 
   renderList(articles, index){
+
     if (!articles) {
       return <div>search articles.</div>
     }
@@ -22,14 +24,19 @@ class ArticleList extends Component {
               </div>
             </div>
             </div>
+
         );
       });
     }
 
   render(){
+
     return(
+
       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 flex-wrap">
+      <ReactCSSTransitionGroup transitionName="fade" transitionEnterTimeout={500} transitionLeaveTimeout={300} className="flex-wrap">
           {this.props.articles.map(this.renderList)}
+            </ReactCSSTransitionGroup>
         </div>
       );
     }
