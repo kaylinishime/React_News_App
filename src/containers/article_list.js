@@ -12,7 +12,7 @@ class ArticleList extends Component {
         console.log(article);
 
         return (
-          <div key={article.index} className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div key={article.index} className="flex-card">
             <div className="card">
             <img className="card-img-top img-responsive" src={article.urlToImage} alt="Card image cap" />
               <div className="card-body">
@@ -28,7 +28,7 @@ class ArticleList extends Component {
 
   render(){
     return(
-      <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 flex-wrap">
           {this.props.articles.map(this.renderList)}
         </div>
       );
